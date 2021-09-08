@@ -1,9 +1,16 @@
 <?php
 session_start();
+require_once(__DIR__.'/Filter.php');
+$filter = new Filter();
 
 if(!empty($_POST["send"])) {
-    $login = $_POST["login"];
-    $email = $_POST["email"];
+    $login = $filter->clearString($_POST["login"]);
+    $email = $filter->clearString($_POST["email"]);
+//    if(!preg_match("/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/",$email)){
+//
+//
+//    }
+
     $captcha = $_POST["captcha"];
 
     $captchaUser = filter_var($_POST["captcha"], FILTER_SANITIZE_STRING);

@@ -33,18 +33,18 @@ session_start();
     <form action="" name="contactForm" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label>Login</label>
-            <input type="text" class="form-control" name="login" id="login">
+            <input type="text" class="form-control" name="login" id="login" required>
         </div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" name="email" id="email" pattern="[^ @]*@[^ @]*">
+            <input type="email" class="form-control" name="email" id="email"  required>
         </div>
 
         <div class="row">
             <div class="form-group col-6">
                 <label>Enter Captcha</label>
-                <input type="text" class="form-control" name="captcha" id="captcha">
+                <input type="text" class="form-control" name="captcha" id="captcha" required>
             </div>
             <div class="form-group col-6">
                 <label>Captcha Code</label>
